@@ -7,9 +7,6 @@ Build a streamlit to display the Youtube playlists downloaded as csv files.
 ## World Classics 
 [![YouTube Video](https://www.youtube.com/@wclassics)
 
-## Dashboard Demo
-![WebApp Demo](assets/Demo.gif)
-
 ## Run the app
 ```Powershell
 # vanilla terminal
