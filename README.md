@@ -1,11 +1,11 @@
-# 💻 Python Multi-Page Web App (Streamlit)
+# 💻 Youtube Channel Playlist Search with Streamlit
 
-Build a multipage web application using only Python—no HTML, CSS, or JavaScript needed. Highlights of this web app include an easy-to-use navigation menu for switching between different pages and a fully functional modal contact form window.
+Build a streamlit to display the Youtube playlists downloaded as csv files.
 .<br>
-👉 **Check out the live website here:** [LIVE WEBSITE](https://multipage-webapp.streamlit.app/)
+👉 **Check out the Channel here:** [LIVE WEBSITE](https://www.youtube.com/@audiblebook)
 
-## Video Tutorial
-[![YouTube Video](https://img.youtube.com/vi/9n4Ch2Dgex0/0.jpg)](https://youtu.be/9n4Ch2Dgex0)
+## World Classics 
+[![YouTube Video](https://www.youtube.com/@wclassics)
 
 ## Dashboard Demo
 ![WebApp Demo](assets/Demo.gif)
@@ -20,31 +20,11 @@ ctrl-c
 ```
 
 
-## 🤓 Check Out My Excel Add-ins
+## 🤓 Check Out World Classics in Chinese
 I've developed some handy Excel add-ins that you might find useful:
 
-- 📊 **[Dashboard Add-in](https://pythonandvba.com/grafly)**: Easily create interactive and visually appealing dashboards.
-- 🎨 **[Cartoon Charts Add-In](https://pythonandvba.com/cuteplots)**: Create engaging and fun cartoon-style charts.
-- 🤪 **[Emoji Add-in](https://pythonandvba.com/emojify)**: Add a touch of fun to your spreadsheets with emojis.
-- 🛠️ **[MyToolBelt Add-in](https://pythonandvba.com/mytoolbelt)**: A versatile toolbelt for Excel, featuring:
-  - Creation of Pandas DataFrames and Jupyter Notebooks from Excel ranges
-  - ChatGPT integration for advanced data analysis
-  - And much more!
-
-
-
-## 🤝 Connect with Me
-- 📺 **YouTube:** [CodingIsFun](https://youtube.com/c/CodingIsFun)
-- 🌐 **Website:** [PythonAndVBA](https://pythonandvba.com)
-- 💬 **Discord:** [Join our Community](https://pythonandvba.com/discord)
-- 💼 **LinkedIn:** [Sven Bosau](https://www.linkedin.com/in/sven-bosau/)
-- 📸 **Instagram:** [Follow me](https://www.instagram.com/sven_bosau/)
-
-## ☕️ Support My Work
-Love my content and want to show appreciation? Why not [buy me a coffee](https://pythonandvba.com/coffee-donation) to fuel my creative engine? Your support means the world to me! 😊
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://pythonandvba.com/coffee-donation)
-
-## 💌 Feedback
-Got some thoughts or suggestions? Don't hesitate to reach out to me at contact@pythonandvba.com. I'd love to hear from you! 💡
-![Logo](https://www.pythonandvba.com/banner-img)
+- 📊 **[三位书屋 - 属灵书籍](https://www.youtube.com/@audiblebook)**: 三位书屋 - 属灵书籍
+- 🎨 **[世界名著](https://www.youtube.com/@SjClassics)**: 世界名著
+- 🤪 **[Christian Books](https://www.youtube.com/@spokenbooks)**: Christian Books
+- 🛠️ **[World Classics Books](https://www.youtube.com/@WClassics)**: World Classics Books
+ 
