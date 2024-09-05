@@ -4,8 +4,12 @@ import os
 import streamlit.components.v1 as components
 from streamlit_player import st_player
 
+# Access the shared content
+content = st.session_state.get('content', {})
+language = st.session_state.get('language', 'en')
+
 channel_name = 'WClassics'
-channel_display_name = 'World Classics'
+channel_display_name = content.get(channel_name, 'World Classics Books')
 
 # Create columns for the layout
 col1, col2 = st.columns([1, 2])
@@ -17,7 +21,7 @@ with col1:
 # Column 2 for the title and description
 with col2:
     st.title(channel_display_name)
-    st.write("Audible World Classics is a collection of global literary masterpieces presented in audiobook format. These classics span different historical periods, cultural backgrounds, and literary styles, allowing listeners to experience the beauty of world literature through audio. Whether it's novels, poetry, or drama, these audiobooks aim to provide an accessible way for people to appreciate and understand the essential works that form the foundation of human cultural heritage.")
+    st.write(content.get('wcDescription', "Audible World Classics offers a collection of global literary masterpieces in audiobook format. Spanning various historical periods, cultures, and literary styles, these classics enable listeners to experience the richness of world literature through audio. From novels to poetry and beyond, these audiobooks provide an accessible way to enjoy and understand the essential works that shape the foundation of human cultural heritage."))
 
 # @st.cache_data
 def get_video_urls(file_type, column_name):
@@ -50,13 +54,13 @@ total_pages = (total_count - 1) // items_per_page + 1
 
 # Using Markdown with inline CSS to style the text
 st.markdown(
-    """
+    f"""
     <style>
-    .light-blue {
+    .light-blue {{
         color: #ADD8E6; /* Light blue color */
-    }
+    }}
     </style>
-    <h2 class="light-blue">The most recent 10 videos</h1>
+    <h2 class="light-blue">{content.get('recentTenVideos', "Most recent 10 audible books.")}</h1>
     """,
     unsafe_allow_html=True
 )
@@ -79,13 +83,13 @@ for i in range(columns_count):
 
 # Using Markdown with inline CSS to style the text
 st.markdown(
-    """
+    f"""
     <style>
-    .light-blue {
+    .light-blue {{
         color: #ADD8E6; /* Light blue color */
-    }
+    }}
     </style>
-    <h2 class="light-blue">The play lists in the Channel</h1>
+    <h2 class="light-blue">{content.get('playlist', "The full playlists, 10 playlists per page.")}</h1>
     """,
     unsafe_allow_html=True
 )

@@ -4,8 +4,12 @@ import os
 import streamlit.components.v1 as components
 from streamlit_player import st_player
 
+# Access the shared content
+content = st.session_state.get('content', {})
+language = st.session_state.get('language', 'en')
+
 channel_name = 'AudibleBook'
-channel_display_name = '三位书屋'
+channel_display_name = content.get(channel_name, 'Audible Christian Books in Chinese')
 
 # Create columns for the layout
 col1, col2 = st.columns([1, 2])
@@ -17,7 +21,7 @@ with col1:
 # Column 2 for the title and description
 with col2:
     st.title(channel_display_name)
-    st.write("这个频道汇集了历史上的基督教书籍，并将其制作成有声读物，使人们更容易聆听，从而净化心灵，敬拜耶稣基督。任何信仰上帝的人都会获得永生。")
+    st.write(content.get('abDescription', "This channel brings together historical Christian books and transforms them into audiobooks, making it easier for people to listen and receive the message of Jesus Christ's salvation. Through these teachings, listeners can experience His unconditional love and find peace and hope in their hearts. Those who believe in and follow Jesus will receive the promise of eternal life through His grace."))
 
 # @st.cache_data
 def get_video_urls(file_type, column_name):
@@ -50,13 +54,13 @@ total_pages = (total_count - 1) // items_per_page + 1
 
 # Using Markdown with inline CSS to style the text
 st.markdown(
-    """
+    f"""
     <style>
-    .light-blue {
+    .light-blue {{
         color: #ADD8E6; /* Light blue color */
-    }
+    }}
     </style>
-    <h2 class="light-blue">最新的10个视频</h1>
+    <h2 class="light-blue">{content.get('recentTenVideos', "Most recent 10 audible books.")}</h1>
     """,
     unsafe_allow_html=True
 )
@@ -79,13 +83,13 @@ for i in range(columns_count):
 
 # Using Markdown with inline CSS to style the text
 st.markdown(
-    """
+    f"""
     <style>
-    .light-blue {
+    .light-blue {{
         color: #ADD8E6; /* Light blue color */
-    }
+    }}
     </style>
-    <h2 class="light-blue">频道中的播放列表</h1>
+    <h2 class="light-blue">{content.get('playlist', "The full playlists, 10 playlists per page.")}</h1>
     """,
     unsafe_allow_html=True
 )

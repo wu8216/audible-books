@@ -1,0 +1,36 @@
+tag,zh,en
+title,有声书合集,Audible Books
+search,搜索视频,Search Videos
+SJClassics,世界名著-中文朗读,Audible World Classics in Chinese
+AudibleBook,三位书屋（灵修书籍）- 中文朗读,"Audible Christian Books in Chinese"
+WClassics,世界名著-英文朗读,Audible World Classics in English
+SpokenBooks,灵修书籍-英文朗读,Audible Christian Books in English
+chatBot,热线问答,Live Chat
+bookRequest,"增加新书请求","New Book Request"
+channels,分类频道,Channels
+searchVideo,搜索视频,"Search Video"
+svDescription,搜索十万有声书,"Search in 10,000 of audible books collection."
+searchInput,"输入书名或作者名进行搜索, 譬如 ""圣经"":","Enter book name or author name to search, e.g. ""Peace"":"
+searchResult,"当前页/总页数","Page of Total Pages"
+svNoResult,"搜索没有结果,请重新搜索","No search result, Please try again."
+svLengthWarning,"请输入至少2个字符以进行搜索。","Please enter at least 2 characters to perform a search."
+abDescription,"这个频道汇集了历史上的基督教经典书籍，将它们制作成有声读物，让人们更容易聆听耶稣基督的救恩之道。透过这些信息，大家可以更深地感受祂无条件的爱，找到内心的平安与希望。相信并跟随耶稣的人，将因祂的恩典得到永生的应许。","This channel brings together historical Christian books and transforms them into audiobooks, making it easier for people to listen and receive the message of Jesus Christ's salvation. Through these teachings, listeners can experience His unconditional love and find peace and hope in their hearts. Those who believe in and follow Jesus will receive the promise of eternal life through His grace."
+recentTenVideos,"最新的10个有声书视频","Most recent 10 audible books."
+playlist,"频道中的播放列表,每页显示10个列表","The full playlists, 10 playlists per page."
+scDescription,"汇集了全球范围内的经典文学作品，包括诺贝尔奖获奖书籍等，以有声书的形式呈现。这些名著涵盖了不同历史时期、文化背景和文学风格，使听众能够通过聆听这些伟大的文学作品，感受世界文学的魅力。这些有声书旨在为读者提供便捷的方式来欣赏和理解人类文化遗产中的精华。","This collection brings together classic literary works from around the world, including Nobel Prize-winning books, presented in audiobook format. These masterpieces span various historical periods, cultural backgrounds, and literary styles, allowing listeners to experience the beauty of world literature. The audiobooks are designed to offer an accessible way for readers to appreciate and understand the essence of humanity's cultural heritage."
+sbDescription,"这个频道汇集了历史上的基督教书籍，并将其制作为有声读物，帮助人们聆听耶稣基督的救恩之道。它强调了一个核心真理：通过信靠耶稣，人的心灵得以更新，罪得赦免，并且凡信靠祂的人都将获得永生的应许。","This channel features a collection of Christian books from throughout history, presented as audiobooks to help people hear the message of Jesus Christ's salvation. It emphasizes the core truth that through faith in Jesus, hearts are transformed, sins are forgiven, and the gift of eternal life is granted to all who believe in Him."
+wcDescription,"这个频道是一系列全球文学经典的有声书集。这些经典作品涵盖了不同的历史时期、文化背景和文学风格，让听众通过音频体验世界文学的丰富多彩。无论是小说、诗歌还是戏剧，这些有声书都旨在为人们提供一种便捷的方式，以欣赏和理解构成人类文化遗产基础的精华作品","Audible World Classics offers a collection of global literary masterpieces in audiobook format. Spanning various historical periods, cultures, and literary styles, these classics enable listeners to experience the richness of world literature through audio. From novels to poetry and beyond, these audiobooks provide an accessible way to enjoy and understand the essential works that shape the foundation of human cultural heritage."
+name,"用戶名字","User Name"
+emailAddress,"电子邮件地址","Email Address"
+message,"新书的书名和作者","Request Book and Author Name"
+submit,"提交","Submit"
+nameMissing,"请填写用戶名字","Please provide your name."
+emailAddressMissing,"请填写电子邮件地址","Please provide your email address."
+emailAddressInvalid,"请填写正确格式电子邮件地址","Please provide a valid email address."
+messageMissing,"请填写新书的书名和作者","Please provide a book name and author."
+submit,"提交","Submit"
+webhook_missing,"电子邮件系统未恢复，请稍后再试","Email service is not set up. Please try again later."
+submitSuccess,"您要求的书籍和作者名称已成功发送！","Your required book and author name have been sent successfully!"
+submitFailed,"发送新书请求时出现错误。","There was an error sending your new book request."
+newBookRequest,"增加新书请求","New Book Request"
+newRequestSummary,"增加新书表","New Books List"

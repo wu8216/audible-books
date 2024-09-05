@@ -4,8 +4,12 @@ import os
 import streamlit.components.v1 as components
 from streamlit_player import st_player
 
+# Access the shared content
+content = st.session_state.get('content', {})
+language = st.session_state.get('language', 'en')
+
 channel_name = 'SjClassics'
-channel_display_name = '世界名著'
+channel_display_name = content.get(channel_name, 'Audible Christian Books in Chinese')
 
 # Create columns for the layout
 col1, col2 = st.columns([1, 2])
@@ -17,8 +21,7 @@ with col1:
 # Column 2 for the title and description
 with col2:
     st.title(channel_display_name)
-    st.write(
-        "汇集了全球范围内的经典文学作品，以有声书的形式呈现。这些名著涵盖了不同历史时期、文化背景和文学风格，使听众能够通过聆听这些伟大的文学作品，感受世界文学的魅力。无论是小说、诗歌，还是戏剧，这些有声书都旨在为读者提供便捷的方式来欣赏和理解人类文化遗产中的精华。")
+    st.write(content.get('scDescription', "This collection brings together classic literary works from around the world, including Nobel Prize-winning books, presented in audiobook format. These masterpieces span various historical periods, cultural backgrounds, and literary styles, allowing listeners to experience the beauty of world literature. The audiobooks are designed to offer an accessible way for readers to appreciate and understand the essence of humanity's cultural heritage."))
 
 
 # @st.cache_data
@@ -53,13 +56,13 @@ total_pages = (total_count - 1) // items_per_page + 1
 
 # Using Markdown with inline CSS to style the text
 st.markdown(
-    """
+    f"""
     <style>
-    .light-blue {
+    .light-blue {{
         color: #ADD8E6; /* Light blue color */
-    }
+    }}
     </style>
-    <h2 class="light-blue">最新的10个视频</h1>
+    <h2 class="light-blue">{content.get('recentTenVideos', "Most recent 10 audible books.")}</h1>
     """,
     unsafe_allow_html=True
 )
@@ -82,13 +85,13 @@ for i in range(columns_count):
 
 # Using Markdown with inline CSS to style the text
 st.markdown(
-    """
+    f"""
     <style>
-    .light-blue {
+    .light-blue {{
         color: #ADD8E6; /* Light blue color */
-    }
+    }}
     </style>
-    <h2 class="light-blue">频道中的播放列表</h1>
+    <h2 class="light-blue">{content.get('playlist', "The full playlists, 10 playlists per page.")}</h1>
     """,
     unsafe_allow_html=True
 )
