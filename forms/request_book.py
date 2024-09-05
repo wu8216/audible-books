@@ -1,7 +1,11 @@
 import re
 import streamlit as st
+import requests  # pip install requests
 import pandas as pd
 import os
+
+# Retrieve webhook URL from Streamlit secrets
+WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
 
 # Path to the CSV file
 csv_file_path = 'data/user_request.csv'
@@ -25,12 +29,16 @@ def contact_form():
     # Create the contact form
     with st.form("contact_form"):
         name = st.text_input("Name (名字)")
-        email = st.text_input("Email Address (电子邮件地址)")
+        email = st.text_input("Email Address （电子邮件地址）")
         message = st.text_area("Request Book and Author Name (请求书名和作者名)")
-        submit_button = st.form_submit_button("Submit (提交)")
+        submit_button = st.form_submit_button("Submit （提交）")
 
     if submit_button:
         # Validate form fields
+        if not WEBHOOK_URL:
+            st.error("Email service is not set up. Please try again later.", icon="📧")
+            st.stop()
+
         if not name:
             st.error("Please provide your name.", icon="🧑")
             st.stop()
@@ -49,7 +57,16 @@ def contact_form():
 
         # Append data to CSV file
         append_to_csv(name, email, message)
-        st.success("Your request has been submitted successfully (提交成功)! 🎉", icon="🚀")
+
+        # Prepare data payload for the webhook
+        data = {"email": email, "name": name, "message": message}
+        response = requests.post(WEBHOOK_URL, json=data)
+
+        # Handle response from the webhook
+        if response.status_code == 200:
+            st.success("Your message has been sent successfully! 🎉", icon="🚀")
+        else:
+            st.error("There was an error sending your message.", icon="😨")
 
 # Call the contact_form function to display the form
 # contact_form()
