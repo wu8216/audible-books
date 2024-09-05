@@ -46,7 +46,8 @@ st.markdown(
         color: #ADD8E6; /* Light blue color */
     }
     </style>
-    <div class="big-light-blue">Enter book name or author name to search:<BR>输入书名或作者名进行搜索:</div>
+    <div class="big-light-blue">Enter book name or author name to search, e.g. Peace:
+    <BR>输入书名或作者名进行搜索, 譬如 圣经:</div>
     """,
     unsafe_allow_html=True
 )
