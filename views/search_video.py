@@ -1,4 +1,6 @@
-from forms.request_book import book_request_form, new_book_summary_form
+import os
+
+from forms.request_book import book_request_form, new_book_summary_form, display_csv
 import streamlit as st
 import pandas as pd
 from streamlit_player import st_player
@@ -14,7 +16,7 @@ def show_contact_form(content):
 
 @st.dialog(content.get('newRequestSummary', 'New Books'))
 def new_book_summary():
-    new_book_summary_form()
+    display_csv()
 
 # --- HERO SECTION ---
 col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
@@ -28,6 +30,34 @@ with col2:
     )
     if st.button(f"🛶 {content.get('bookRequest', 'New Book Request')}"):
         show_contact_form(content)
+
+
+# Function to increment visitor count
+def increment_visitor_count():
+    if not os.path.exists("visitor_count.txt"):
+        with open("visitor_count.txt", "w") as f:
+            f.write("0")
+
+    with open("visitor_count.txt", "r") as f:
+        count = int(f.read())
+
+    count += 1
+
+    with open("visitor_count.txt", "w") as f:
+        f.write(str(count))
+
+    return count
+
+# Only increment on first visit of the session
+if 'visited' not in st.session_state:
+    st.session_state.visited = True
+    visitor_count = increment_visitor_count()
+else:
+    with open("visitor_count.txt", "r") as f:
+        visitor_count = int(f.read())
+
+# Display visitor count on the UI
+st.write(f"Total Visitors: {visitor_count}")
 
 @st.cache_data
 def load_zh_data():

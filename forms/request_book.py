@@ -15,7 +15,6 @@ if not os.path.isfile(csv_file_path):
     df = pd.DataFrame(columns=['name', 'email', 'message'])
     df.to_csv(csv_file_path, index=False)
 
-
 def is_valid_email(email):
     # Basic regex pattern for email validation
     email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
@@ -34,6 +33,16 @@ def new_book_summary_form():
     else:
         request_content = st.session_state.get('request_content', "No New Book Yet")
         st.text(request_content)
+
+# Function to read and display CSV content
+def display_csv():
+    if os.path.exists(csv_file_path):
+        # Read the CSV file into a DataFrame
+        df = pd.read_csv(csv_file_path)
+        # Display the CSV content on the UI
+        st.write(df)
+    else:
+        st.write("No requests yet!")
 
 
 def book_request_form(content):
