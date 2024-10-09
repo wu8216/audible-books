@@ -4,6 +4,7 @@ from forms.request_book import book_request_form, new_book_summary_form, display
 import streamlit as st
 import pandas as pd
 from streamlit_player import st_player
+import streamlit.components.v1 as components
 
 # Access the shared content
 content = st.session_state.get('content', {})
@@ -93,6 +94,10 @@ if 'en' == language:
     data = en_data
 else:
     data = zh_data
+
+song_html=''' <iframe width="768" height="432" src="https://www.youtube.com/embed/Q-HKRRTdBsA" title="紀錄片「主僕倪柝聲」主題曲「我若稍微偏離正路」Documentary &quot;GOD&#39;S SERVANT-WATCHMAN NEE&quot; - Theme Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> '''
+
+components.html(song_html, width=768, height=432, scrolling=False)
 
 # Display the search input with a larger font and light blue color
 st.markdown(
